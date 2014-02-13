@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CurrenTemp</title>
+
+  <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr.js"></script>
+
+	
+</head>
+<body>
+  <!-- body content here -->
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+  <script src="js/main.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <article>
+		<header class="alert-box success">
+			<h1>CurrenTemp</h1>
+		</header>
+		<section>
+			<div class="card" id="card" >
+				<ul class="left">
+					<!--  	here is where the weather content will be formatted into a stylistic "Google now" styled card. -->		
+				</ul>
+				<ul class="right">
+					
+				</ul>
+				<ul class="last">
+					
+				</ul>
+			</div>
+		</section>
+	</article>
+	<footer>
+		<h2><img src="SVG/Sunrise.svg"/>Local weather brought to you by <a href="http://forecast.io">Forecast.io</a>. Made by <a href="http://twitter.com/panteravaca">@panteravaca</a>.<img src="SVG/Sunset.svg"/></h2>
+	</footer>
+</body>
+</html>
