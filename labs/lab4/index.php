@@ -33,6 +33,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Twicker: The Tweet Ticker</title>
     
+    <meta name="author" content="Matt Hamlin">
+		<meta name="keywords" content="Tweet Ticker">
+		<meta name="description" content="A simple auto-scrolling tweet timeline">
+		<meta name="application-name" conent="Twicker Mobile">
+    
+    <!-- Version 0.1.5 -->
+    <!-- Last update 23/2/14 [14:21] -->
+    
     <link rel="icon" type="image/png" href="pngs/Communication/twitter.png"/>
     
     <meta name="description" content="Twicker">
@@ -49,7 +57,7 @@
   <body>
   	<article>
     	<header class="alert-box success ui-grid-a">
-    		<h1 class="ui-block-a">Tweets:</h1>
+    		<h1 class="ui-block-a">Twicker Mobile:</h1>
     		<div class="social right ui-block-b">
     			<!-- the following is used to share the page on twitter, how fitting -->
     			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://projects.campuslist.myrpi.org/TwickerMobile/" data-via="panteravaca" data-lang="en">Tweet</a>
@@ -64,7 +72,13 @@
 				</div>
     	</section>
     	<footer>
-    		<h2><img src="pngs/Communication/twitter.png"/>Tweets provided by <a href="https://dev.twitter.com">Twitter API</a>. Made by <a href="http://twitter.com/panteravaca">@panteravaca</a>.<img src="pngs/Communication/twitter.png"/></h2>
+    		<h2>
+    			<img src="pngs/Communication/twitter.png"/>
+    			Tweets provided by <a href="https://dev.twitter.com">Twitter API</a>.
+    			Made by <a href="http://twitter.com/panteravaca">@panteravaca</a>.
+    			<a href="about.html">About this project.</a>
+    			<img src="pngs/Communication/twitter.png"/>
+    		</h2>
     	</footer>
 		</article>
     

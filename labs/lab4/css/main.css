@@ -124,6 +124,12 @@ h1 {
   margin:0 1rem 1rem;
   border-radius:3px;
 }
+.card-special {
+	margin: 0 25% auto 25%;
+}
+centre {
+	text-align: center;
+}
 
 /* content that we want to alter based on browser size */
 /* first handle the case of the desktop browser */
@@ -171,7 +177,7 @@ h1 {
 @media screen and (max-width: 600px){
 	.tweetsize {
 		font-size: 1em;
-		font-weight: 100;	
+		font-weight: 200;	
 	}
 
 	footer {
