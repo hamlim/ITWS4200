@@ -64,8 +64,8 @@ $(document).ready(function() {
 				success: function(data, status) {
 					console.log(data);
 					//variables for outputting stuff
-					var temp = "<li class='temp'><img src='SVG/Thermometer.svg' height='50px' width='50px'/>" + data.currently.temperature +"<img src='SVG/Degrees-Celcius.svg' height='50px' width='50px'/>" + endli;
-					var wind = "<li class='wind'><img src='SVG/Wind.svg' height='50px' width='50px'/>" + data.currently.windSpeed + " MPS" + endli;
+					var temp = "<li class='temp'><img src='SVG/Thermometer.svg' height='50px' width='50px'/>" + data.currently.temperature +"<img src='SVG/Degrees-Fahrenheit.svg' height='50px' width='50px'/>" + endli;
+					var wind = "<li class='wind'><img src='SVG/Wind.svg' height='50px' width='50px'/>" + data.currently.windSpeed + " MPH" + endli;
 					var icon_text = "<li class='icon'>";
 					var citynmb = "<li class='city-name'>";
 					
@@ -79,8 +79,9 @@ $(document).ready(function() {
 					geocoder.geocode({'latLng': latlng}, function(results, status){
 						if (status == google.maps.GeocoderStatus.OK){
 							if(results[0]) {
+								console.log(results[0]);
 								//formatted address
-								cityname = results[1].address_components[2]["long_name"];
+								cityname = results[0].formatted_address;
 								citynmb = citynmb + cityname + endli;
 								//now append all the items to the ul element
 								
@@ -143,7 +144,9 @@ $(document).ready(function() {
 								//now we display the icon floated to the right
 								var im = "<li class='icon-image'><img src='" + icon_image + "' width='100px' height='100px'/></li>"
 								$(".card ul.left").append(im);
-								$(".card ul.left").append(citynmb);
+								$(".card ul.last").append(citynmb);
+								var emptyli = "<li class='spacingli'></li>";
+								$(".card ul.last").append(emptyli);
 								$(".card ul.last").append(icon_text);
 								
 							}

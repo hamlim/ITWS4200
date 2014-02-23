@@ -12,6 +12,9 @@ body {
 	background:#c0c0c0;
 	height: 100%;
 }
+.emptyli {
+	min-height: 20px;
+}
 @media screen and (min-width: 800px){
 .card {
   padding:1.5rem;

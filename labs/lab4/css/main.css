@@ -1,0 +1,211 @@
+/* Css main style sheet for TwickerMobile. */
+/* Developed independently by Matt Hamlin (@panteravaca) */
+
+/* Header of the css document */
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,900,700italic,900italic);
+
+* { 
+	font-family: 'Roboto', sans-serif;
+	line-height:1.2;
+	vertical-align:middle;
+}
+
+body { 
+	background:#c0c0c0;
+	height: 100%;
+}
+
+
+/* to add some interesting animations: */
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+/* body of the css document */
+
+li {
+	display: none;
+}
+li:nth-child {
+	margin-bottom: 10%;
+}
+li:nth-child(1) {
+	display:block;
+	opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+li:nth-child(2) {
+	display:block;
+	opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+li:nth-child(3) {
+	display:block;
+	opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+li:nth-child(4) {
+	display:block;
+	opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+li:nth-child(5) {
+	display:block;
+	opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+
+}
+h1 {
+	width:100%;
+}
+.right {
+	text-align: right;
+	margin-top:10%;
+}
+ 
+/* Google Now card style ui for the tweet display developed by BENNETT FEELY link to source: http://codepen.io/bennettfeely/pen/Ftczh */
+.card {
+  padding:1.5rem;
+  box-shadow:0 1px 2px #aaa;
+  background:white;
+  margin:0 1rem 1rem;
+  border-radius:3px;
+}
+
+/* content that we want to alter based on browser size */
+/* first handle the case of the desktop browser */
+@media screen and (min-width: 600px){
+	.tweetsize {
+		font-size: 2em;
+		font-weight: 100;	
+	}
+
+	footer {
+		bottom: 0;
+	  height: 65px;
+  	left: 0;
+	  position: fixed;
+	  right: 0;
+		text-align: center;
+		background: #43ac6a;
+	}
+	footer h2 {
+		font-size: 1.5em;
+		font-weight: 100;
+	}
+	footer h2 img {
+		width: 50px;
+		height: 50px;
+	}
+	footer a:link {
+		color: black;
+		font-weight: 300;
+	}
+	footer a:visited{
+		color: black;
+		font-weight: 300;
+	}
+	footer a:active {
+		color: #c0392b;
+		font-weight: 300;
+	}
+	footer a:hover {
+		color: #c0392b;
+		font-weight: 300;
+	}
+}
+/* now some styling for smartphone displays */
+@media screen and (max-width: 600px){
+	.tweetsize {
+		font-size: 1em;
+		font-weight: 100;	
+	}
+
+	footer {
+		bottom: 0;
+	  height: 45px;
+  	left: 0;
+	  position: fixed;
+	  right: 0;
+		text-align: center;
+		background: #43ac6a;
+	}
+	footer h2 {
+		font-size: .7em;
+		font-weight: 100;
+	}
+	footer h2 img {
+		width: 25px;
+		height: 25px;
+	}
+	footer a:link {
+		color: black;
+		font-weight: 300;
+	}
+	footer a:visited{
+		color: black;
+		font-weight: 300;
+	}
+	footer a:active {
+		color: #c0392b;
+		font-weight: 300;
+	}
+	footer a:hover {
+		color: #c0392b;
+		font-weight: 300;
+	}
+}
+
