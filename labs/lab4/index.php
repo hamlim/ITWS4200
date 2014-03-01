@@ -9,22 +9,18 @@
 		'consumer_key' => "zV4V7BI1TainNbCqcvNukQ" ,
 		'consumer_secret' => "jsGEvqIZ95yBiBOTx84TpXTxuDUQiuLZvpvSzO87Lo"
 	);
-	$url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
-	$requestMethod = "GET";
-	$getfield = '?screen_name=panteravaca&count=50';
-	
+	$url = 'https://api.twitter.com/1.1/search/tweets.json';
+	$requestMethod = 'GET';
+
+	$getfield = '?q=+&geocode=42.732198,-73.697147,10mi&count=100";';
+
 	$twitter = new TwitterAPIExchange($settings);
-
-	$string = json_decode($twitter->setGetfield($getfield)
-													->buildOauth($url, $requestMethod)
-													->performRequest(), $assoc = TRUE);
-	$tweets = array();
-	foreach($string as $items){
-		$tweets[] = $items["text"];
-	};
-
-	$js_tweets = json_encode($tweets);
-
+	$string =  $twitter->setGetfield($getfield)
+                     ->buildOauth($url, $requestMethod)
+                     ->performRequest();
+	
+	
+	
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -38,8 +34,8 @@
 		<meta name="description" content="A simple auto-scrolling tweet timeline">
 		<meta name="application-name" conent="Twicker Mobile">
     
-    <!-- Version 0.1.5 -->
-    <!-- Last update 23/2/14 [14:21] -->
+    <!-- Version 1.0.0 -->
+    <!-- Last update 25/2/14 [18:10] EST -->
     
     <link rel="icon" type="image/png" href="pngs/Communication/twitter.png"/>
     
@@ -48,8 +44,9 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
-
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.1%20-%20edited.css">
+    <link rel="stylesheet" href="css/alt.css">
+		
      
     <script src="js/vendor/modernizr.js"></script>
 
@@ -57,7 +54,7 @@
   <body>
   	<article>
     	<header class="alert-box success ui-grid-a">
-    		<h1 class="ui-block-a">Twicker Mobile:</h1>
+    		<h1 class="ui-block-a h1-special">Twicker Mobile:</h1>
     		<div class="social right ui-block-b">
     			<!-- the following is used to share the page on twitter, how fitting -->
     			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://projects.campuslist.myrpi.org/TwickerMobile/" data-via="panteravaca" data-lang="en">Tweet</a>
@@ -74,9 +71,9 @@
     	<footer>
     		<h2>
     			<img src="pngs/Communication/twitter.png"/>
-    			Tweets provided by <a href="https://dev.twitter.com">Twitter API</a>.
-    			Made by <a href="http://twitter.com/panteravaca">@panteravaca</a>.
-    			<a href="about.html">About this project.</a>
+    			Tweets provided by <a href="https://dev.twitter.com" class="links" data-role="none">Twitter API</a>.
+    			Made by <a href="http://twitter.com/panteravaca" class="links" data-role="none">@panteravaca</a>.
+    			<a href="about.html" class="links" data-role="none" >About this project.</a>
     			<img src="pngs/Communication/twitter.png"/>
     		</h2>
     	</footer>
@@ -86,30 +83,13 @@
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
-    <script src="js/main.js"></script>
     <script>
      	$(document).foundation();
-    </script>
-    <script>
-    	var twarr = <?php echo $js_tweets; ?>;
-    	//time to interpret it in jquery
-    	function displayContent(tweetarr){
-				var modalb = "<li><div class='large-12 columns tweetsize'><div class='card'><div class='tweet'>";
-				var modale = "</div></div></div></li>";
-				for( var i =0; i<tweetarr.length; i++){
-					$("div.row ul").append(modalb + tweetarr[i] + modale);
-				};
-				//above for loop appends every tweet to the entire ul structure
-				//below code segement cycles through the content
-				window.setInterval(function(){
-					$("div.row ul li:first-child").each(function(){
-						$("div.row ul").append($("div.row ul li:first-child"));
-					});
-				}, 5000);
-			};
-    	displayContent(twarr);
-    </script>
-
+			var resp = <?php echo $string; ?>;
+			console.log(resp);
+			//resp contains the entire json structure from the look up
+		</script>
+    <script src="js/main.js"></script>
 
   </body>
 </html>

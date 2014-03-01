@@ -1,0 +1,25 @@
+/* Below is styling that i want to specifically override the jQuery Mobile theming */
+.ui-page .ui-page-theme-a .ui-page-active {
+	background: #3498db;
+}
+.links {
+	color: #c0392b;
+}
+.links:visited{
+	color: black;
+}
+.links:active {
+	color: #c0392b;
+}
+.links:hover {
+	color: #c0392b;
+}
+.card-special {
+	margin: 0 25% auto 25%;
+}
+
+@media screen and (max-width: 600px){
+	body {
+		margin-bottom: 50px;
+	}
+}

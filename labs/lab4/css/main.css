@@ -9,11 +9,15 @@
 	font-family: 'Roboto', sans-serif;
 	line-height:1.2;
 	vertical-align:middle;
+	text-shadow: none;
 }
+
+
 
 body { 
 	background:#c0c0c0;
 	height: 100%;
+	overflow: scroll;
 }
 
 
@@ -115,18 +119,21 @@ h1 {
 	text-align: right;
 	margin-top:10%;
 }
- 
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9 /* ie8 */
+}
+
 /* Google Now card style ui for the tweet display developed by BENNETT FEELY link to source: http://codepen.io/bennettfeely/pen/Ftczh */
 .card {
-  padding:1.5rem;
+  padding:1rem;
   box-shadow:0 1px 2px #aaa;
   background:white;
   margin:0 1rem 1rem;
   border-radius:3px;
 }
-.card-special {
-	margin: 0 25% auto 25%;
-}
+
 centre {
 	text-align: center;
 }
@@ -147,6 +154,7 @@ centre {
 	  right: 0;
 		text-align: center;
 		background: #43ac6a;
+		overflow: hidden;
 	}
 	footer h2 {
 		font-size: 1.5em;
@@ -157,11 +165,11 @@ centre {
 		height: 50px;
 	}
 	footer a:link {
-		color: black;
+		color: #c0392b;
 		font-weight: 300;
 	}
 	footer a:visited{
-		color: black;
+		color: #c0392b;
 		font-weight: 300;
 	}
 	footer a:active {
@@ -175,11 +183,17 @@ centre {
 }
 /* now some styling for smartphone displays */
 @media screen and (max-width: 600px){
+	h1 {
+		font-size: 1.5rem;
+	}
 	.tweetsize {
 		font-size: 1em;
-		font-weight: 200;	
+		font-weight: 300;	
 	}
-
+	body {
+		padding-bottom: 45px;
+		overflow: auto;
+	}
 	footer {
 		bottom: 0;
 	  height: 45px;
@@ -188,6 +202,7 @@ centre {
 	  right: 0;
 		text-align: center;
 		background: #43ac6a;
+		overflow: hidden;
 	}
 	footer h2 {
 		font-size: .7em;
